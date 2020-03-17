@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/Background"
+    tools:context="com.example.d851.myproject.Menu"
+    android:paddingHorizontal="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello,what would you like to do today?"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textColor="@color/colorMain"
+        />
+    <Button
+        android:layout_marginTop="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Insulin calculator"
+        android:textSize="25dp"
+        android:id="@+id/btCalc"
+        android:textColor="@color/colorMain"
+        android:background="@drawable/custom_button"
+        />
+    <Button
+        android:layout_marginTop="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Preferable breakfast meals"
+        android:textSize="25dp"
+        android:id="@+id/btBreakfast"
+        android:textColor="@color/colorMain"
+        android:background="@drawable/custom_button"
+        />
+    <Button
+        android:layout_marginTop="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Preferable lunch meals"
+        android:textSize="25dp"
+        android:id="@+id/btLunch"
+        android:textColor="@color/colorMain"
+        android:background="@drawable/custom_button"
+        />
+    <Button
+        android:layout_marginTop="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Preferable dinner meals"
+        android:textSize="25dp"
+        android:id="@+id/btDinner"
+        android:textColor="@color/colorMain"
+        android:background="@drawable/custom_button"
+        />
+    <Button
+        android:layout_marginTop="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Change your data"
+        android:textSize="25dp"
+        android:id="@+id/btData"
+        android:textColor="@color/colorMain"
+        android:background="@drawable/custom_button"
+        />
+
+    <Button
+        android:layout_marginTop="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Sign out"
+        android:textSize="25dp"
+        android:id="@+id/btSignOut"
+        android:textColor="@color/colorMain"
+        android:background="@drawable/custom_button"
+        />
+
+
+
+</LinearLayout>

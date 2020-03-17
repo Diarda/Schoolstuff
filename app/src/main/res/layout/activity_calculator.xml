@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/Background"
+    tools:context="com.example.d851.myproject.Calculator">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Insulin Calculator"
+    android:textSize="30sp"
+    android:textColor="@color/colorMain"
+    android:layout_gravity="center"/>
+    <Spinner
+        android:layout_marginTop="20dp"
+        android:id="@+id/sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        >
+    </Spinner>
+<TextView
+    android:layout_marginTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:hint="amount of carbs in a 100g"
+    android:textSize="25dp"
+    android:textColorHint="#953F51B5"
+    android:background="@android:drawable/alert_light_frame"
+    android:id="@+id/tvHundred"
+    />
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:text="calculate"
+        android:textSize="25sp"
+        android:id="@+id/btCalculate"
+        android:textColor="@color/colorMain"
+        android:background="@drawable/custom_button" />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="tips"
+        android:textSize="25dp"
+        android:textColorHint="#953F51B5"
+        android:background="@android:drawable/alert_light_frame"
+        android:id="@+id/tvTips"
+        />
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:text="Go back"
+        android:textSize="25sp"
+        android:id="@+id/btBackCalc"
+        android:textColor="@color/colorMain"
+        android:background="@drawable/custom_button"/>
+</LinearLayout>
