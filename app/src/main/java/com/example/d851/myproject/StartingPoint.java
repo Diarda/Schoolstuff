@@ -77,24 +77,23 @@ public class StartingPoint extends AppCompatActivity implements View.OnClickList
     public void createDatabase() {
 
         db.execSQL("CREATE TABLE IF NOT EXISTS User(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INT, height DOUBLE, type TEXT , password TEXT)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS Product(id TEXT, name TEXT,  amountofCarbs INT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Product(idPro TEXT PRIMARY KEY, name TEXT,  amountofCarbs INT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS FoodMenu(type TEXT,time TEXT, recomendations TEXT)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS UserDetail(id INTEGER, idType TEXT, age INT, height DOUBLE)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS UserProducts(idUser INTEGER, idProduct TEXT, date INT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS UserProducts(idUser INTEGER ,idProducts TEXT ,date INT, FOREIGN KEY(idUser) REFERENCES User(id), FOREIGN KEY(idProducts) REFERENCES Product(id))");
 
 
         Cursor cursor = db.rawQuery("SELECT * FROM FoodMenu", null);
         if(cursor.getCount()>0)
             return;
 
-        db.execSQL("INSERT INTO FoodMenu VALUES ('Type1','Breakfast', '" + getString(R.string.recomendations1Break) + "')");
-        db.execSQL("INSERT INTO FoodMenu VALUES ('Type2','Breakfast', '" + getString(R.string.recomendations2Break) + "')");
+        db.execSQL("INSERT INTO FoodMenu VALUES ('Type1','Breakfast', '" + getString(R.string.recommendations1Break) + "')");
+        db.execSQL("INSERT INTO FoodMenu VALUES ('Type2','Breakfast', '" + getString(R.string.recommendations2Break) + "')");
 
-        db.execSQL("INSERT INTO FoodMenu VALUES ('Type1','Lunch', '" + getString(R.string.recomendations1Lunch) + "')");
-        db.execSQL("INSERT INTO FoodMenu VALUES ('Type2','Lunch', '" + getString(R.string.recomendations2Lunch) + "')");
+        db.execSQL("INSERT INTO FoodMenu VALUES ('Type1','Lunch', '" + getString(R.string.recommendations1Lunch) + "')");
+        db.execSQL("INSERT INTO FoodMenu VALUES ('Type2','Lunch', '" + getString(R.string.recommendations2Lunch) + "')");
 
-        db.execSQL("INSERT INTO FoodMenu VALUES ('Type1','Dinner', '" + getString(R.string.recomendations1Dinner) + "')");
-        db.execSQL("INSERT INTO FoodMenu VALUES ('Type2','Dinner', '" + getString(R.string.recomendations2Dinner) + "')");
+        db.execSQL("INSERT INTO FoodMenu VALUES ('Type1','Dinner', '" + getString(R.string.recommendations1Dinner) + "')");
+        db.execSQL("INSERT INTO FoodMenu VALUES ('Type2','Dinner', '" + getString(R.string.recommendations2Dinner) + "')");
 
         db.execSQL("INSERT INTO Product VALUES ('01','Apple',14)");
         db.execSQL("INSERT INTO Product VALUES ('02','Banana',23)");

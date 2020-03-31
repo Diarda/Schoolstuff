@@ -85,8 +85,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             Cursor cursor = db.rawQuery("SELECT * FROM User WHERE name = '"+name+"' AND password='"+password+"'",null);
             cursor.moveToFirst();
             int id =cursor.getInt(0);
-            String sql2 ="INSERT INTO UserDetail(id, idType, age, height) VALUES ("+id+",'" + rb.getText().toString() + "'," + age + "," + height + ")";
-            db.execSQL(sql2);
             finish();
         }
     }

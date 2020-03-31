@@ -23,13 +23,18 @@
         android:background="@android:drawable/btn_dropdown"
         >
     </Spinner>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="amount of carbs in a 100g"
+        android:textSize="25dp"
+        android:textColor="#953F51B5"
+        ></TextView>
 <TextView
-    android:layout_marginTop="20dp"
     android:layout_width="match_parent"
     android:layout_height="60dp"
-    android:hint="amount of carbs in a 100g"
-    android:textSize="25dp"
-    android:textColorHint="#953F51B5"
     android:background="@android:drawable/alert_light_frame"
     android:id="@+id/tvHundred"
     />
@@ -53,6 +58,16 @@
         android:background="@android:drawable/alert_light_frame"
         android:id="@+id/tvTips"
         />
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:text="History"
+        android:textSize="25sp"
+        android:id="@+id/btHistory"
+        android:textColor="@color/colorMain"
+        android:background="@drawable/custom_button"/>
     <Button
         android:layout_marginTop="20dp"
         android:layout_width="250dp"

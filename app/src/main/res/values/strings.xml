@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">SugarHelp</string>
-    <string name="recomendations1Break">
+    <string name="recommendations1Break">
          What we choose to eat for breakfast will likely impact our blood sugar levels for the entire day.
          \nHigh-carb/low-fat,or high-fat/low-carb are the ideal combinations for the sake of blood sugar management.
          \n10 to 20 grams of net carbs (total carb minus dietary fiber grams = net carbs).
@@ -17,7 +17,7 @@
          \n6. French toast or pancakes
          \n7. Cottage cheese
     </string>
-    <string name="recomendations2Break">
+    <string name="recommendations2Break">
         Breakfast is an essential meal.
         \nResearch shows that people with diabetes who eat breakfast are less likely to overeat throughout the day.
         \nEating a lower-carb breakfast will minimize the resulting glucose response
@@ -30,7 +30,7 @@
         \n5. Smoothies
         \n6. Eggs.
             </string>
-    <string name="recomendations1Lunch">
+    <string name="recommendations1Lunch">
         1. Grains, Beans, and Starchy Vegetables (6 or more servings a day)
         \nFoods like bread, grains, beans, rice, pasta,
         \nand starchy vegetables are at the bottom of the pyramid
@@ -43,7 +43,7 @@
         \n4. Milk(2 – 3 servings a day)
         \n5. Meat and Fish(2 – 3 servings a day)
     </string>
-    <string name="recomendations2Lunch">
+    <string name="recommendations2Lunch">
         1. Salads
         \nSalad should be in regular rotation for lunch. You can create a different salad every day of the week by varying your toppings.
         \nTry grilled chicken, shrimp, or fish, but avoid heaping on a lot of fattening ingredients, such as bacon bits and heavy cheeses.
@@ -59,11 +59,11 @@
         \nTo better control type 2 diabetes, keep these tips in mind:
         \nPick whole-grain bread over white bread.
         \nAvoid fried foods.
-        \nIf you are craving a sweet after lunch and fresh fruit just won't do, reach for sugar-free, fat-free frozen yogurt.
+        \nIf you are craving a sweet after lunch and fresh fruit just wont do, reach for sugar-free, fat-free frozen yogurt.
         \nBe careful of sorbets and sherbets that are loaded with sugar.
         \nAvoid sugary beverages; drink water and tea instead.
     </string>
-    <string name="recomendations1Dinner">
+    <string name="recommendations1Dinner">
         Less than 20 grams of carbs
         \nMostly carbs with a low glycemic index
         \nAt least 20 grams of protein
@@ -71,15 +71,13 @@
         \nThis should give you a healthy and balanced dinner that won’t spike your blood sugar.
         \nYou can, of course, make changes to these guidelines if you follow a specific diet (ketogenic diet, plant-based diet, etc.)
     </string>
-    <string name="recomendations2Dinner">
+    <string name="recommendations2Dinner">
         Follow the diabetes food pyramid:
         \nChoose lean protein sources, such as turkey, ham, chicken, lean roast beef, and fish.
         \nEat more grains, beans, and starchy vegetables and less fats, sweets, and alcohol.
         \nIn between, and equally divided, are protein choices, non-starchy vegetables, fruit, and milk and dairy products.
         \nStay away from fatty chips and mayonnaise-based salads, like potato salad. Complement your meal with sliced carrots and celery or fruit salad.
     </string>
-
-
 
 
 </resources>

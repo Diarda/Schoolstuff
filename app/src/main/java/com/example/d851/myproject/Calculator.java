@@ -2,6 +2,7 @@ package com.example.d851.myproject;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AlertDialog;
@@ -17,7 +18,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class Calculator extends AppCompatActivity implements View.OnClickListener {
-    Button btCalc, btBackCalc;
+    Button btCalc, btBackCalc, btHistory;
     Spinner sp1;
     TextView tvSugar, tvTips;
     SQLiteDatabase db;
@@ -50,6 +51,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         tvSugar=findViewById(R.id.tvHundred);
         tvTips=findViewById(R.id.tvTips);
         btBackCalc=findViewById(R.id.btBackCalc);
+        btHistory=findViewById(R.id.btHistory);
 
 
         listofProduct=new ArrayList<>();
@@ -82,6 +84,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
      });
         btCalc.setOnClickListener(this);
         btBackCalc.setOnClickListener(this);
+        btHistory.setOnClickListener(this);
 
 
     }
@@ -120,6 +123,11 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
                 tvTips.setText(String.format("Since you ate %s you need to take %.2f units of insulin per 100g of product.", NameOfFood, (AmountOfCarbs/insulinportions)));
             }
             else tvTips.setText("You have diabetes type 2, there is no information about you needing shots of insulin after food ");
+        }
+        if(btHistory==view)
+        {
+            Intent intent = new Intent(this,History.class);
+            startActivity(intent);
         }
     }
 }
