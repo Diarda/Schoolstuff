@@ -4,16 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/Background"
     tools:context=".History">
-
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:text="History"
+        android:layout_gravity="center"
+        ></TextView>
+
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorMain"
-        android:id="@+id/tvHist"
-        android:textColor="@color/idk"
-        android:textSize="25dp"
-        ></TextView>
+        android:id="@+id/list"
+        ></ListView>
 
 </LinearLayout>
