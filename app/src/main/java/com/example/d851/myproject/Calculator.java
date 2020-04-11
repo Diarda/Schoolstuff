@@ -17,11 +17,13 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Calculator extends AppCompatActivity implements View.OnClickListener {
     Button btCalc, btBackCalc, btHistory;
@@ -97,7 +99,6 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onClick(View view)
     {
@@ -127,13 +128,14 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         }
         if (view==btCalc)
         {
-            LocalTime myObj = LocalTime.now();
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String currentDate = formatter.format(new Date());
             if(StartingPoint.currentUser.getType().equals("Type1"))
             {
                 tvTips.setText(String.format("Since you ate %s you need to take %.2f units of insulin per 100g of product.", NameOfFood, (AmountOfCarbs/insulinportions)));
             }
             else tvTips.setText("You have diabetes type 2, there is no information about you needing shots of insulin after food ");
-            db.execSQL("INSERT INTO UserProducts VALUES ("+StartingPoint.currentUser.getId()+",'"+idProduct+"','"+myObj+"')");
+            db.execSQL("INSERT INTO UserProducts VALUES ("+StartingPoint.currentUser.getId()+",'"+idProduct+"','"+currentDate+"')");
 
         }
         if(btHistory==view)
