@@ -14,7 +14,7 @@ public class Dinner extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dinner);
 
-        db=openOrCreateDatabase("Helper12", Context.MODE_PRIVATE, null);
+        db=openOrCreateDatabase("Helper1", Context.MODE_PRIVATE, null);
         Cursor cursor = db.rawQuery("SELECT recomendations FROM FoodMenu WHERE type = '"+StartingPoint.currentUser.getType()+"' AND time = 'Dinner'", null);
         cursor.moveToFirst();
         String recomendations = cursor.getString(0);

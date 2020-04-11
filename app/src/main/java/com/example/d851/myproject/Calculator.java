@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +16,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
 import java.util.ArrayList;
 
@@ -25,7 +31,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
     ArrayList<Product> listofProduct;
     ArrayList<String> listofProductst;
     int AmountOfCarbs;
-    String NameOfFood;
+    String NameOfFood,idProduct;
 
     Double dailynorm;
     Double insulinportions;
@@ -37,7 +43,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
 
-        db=openOrCreateDatabase("Helper12", Context.MODE_PRIVATE, null);
+        db=openOrCreateDatabase("Helper1", Context.MODE_PRIVATE, null);
 
         double pw = Math.pow(StartingPoint.currentUser.getHeight(),2)*19;
         dailynorm = pw*0.7;
@@ -68,12 +74,14 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         adapterPro = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,listofProductst);
 
         sp1.setAdapter(adapterPro);
+
         sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
          @Override
          public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
          {
              AmountOfCarbs = listofProduct.get(i).getAmountofCarbs();
              NameOfFood = listofProduct.get(i).getName();
+             idProduct = listofProduct.get(i).getId();
              tvSugar.setText(""+AmountOfCarbs);
          }
 
@@ -89,6 +97,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onClick(View view)
     {
@@ -118,16 +127,20 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         }
         if (view==btCalc)
         {
+            LocalTime myObj = LocalTime.now();
             if(StartingPoint.currentUser.getType().equals("Type1"))
             {
                 tvTips.setText(String.format("Since you ate %s you need to take %.2f units of insulin per 100g of product.", NameOfFood, (AmountOfCarbs/insulinportions)));
             }
             else tvTips.setText("You have diabetes type 2, there is no information about you needing shots of insulin after food ");
+            db.execSQL("INSERT INTO UserProducts VALUES ("+StartingPoint.currentUser.getId()+",'"+idProduct+"','"+myObj+"')");
+
         }
         if(btHistory==view)
         {
             Intent intent = new Intent(this,History.class);
             startActivity(intent);
         }
+
     }
 }

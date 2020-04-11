@@ -14,7 +14,7 @@ public class Lunch extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lunch);
-        db = openOrCreateDatabase("Helper12", Context.MODE_PRIVATE, null);
+        db = openOrCreateDatabase("Helper1", Context.MODE_PRIVATE, null);
         Cursor cursor = db.rawQuery("SELECT recomendations FROM FoodMenu WHERE type = '" + StartingPoint.currentUser.getType() + "' AND time = 'Lunch'", null);
         cursor.moveToFirst();
         String recomendations = cursor.getString(0);

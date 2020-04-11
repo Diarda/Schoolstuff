@@ -1,7 +1,9 @@
 package com.example.d851.myproject;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,11 +12,13 @@ import android.widget.Button;
 
 public class Menu extends AppCompatActivity implements View.OnClickListener {
     Button btBreakf, btLunch, btDinner, btCalc, btSignOut, btData;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
+        db=openOrCreateDatabase("Helper1", Context.MODE_PRIVATE, null);
 
         btBreakf=findViewById(R.id.btBreakfast);
         btLunch=findViewById(R.id.btLunch);

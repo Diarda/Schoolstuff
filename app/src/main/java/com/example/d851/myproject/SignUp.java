@@ -29,7 +29,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
 
-        db=openOrCreateDatabase("Helper12", Context.MODE_PRIVATE, null);
+        db=openOrCreateDatabase("Helper1", Context.MODE_PRIVATE, null);
 
 
         etName=findViewById(R.id.etName);

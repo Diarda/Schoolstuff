@@ -22,7 +22,7 @@ public class StartingPoint extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startingpoint);
 
-        db=openOrCreateDatabase("Helper12", Context.MODE_PRIVATE, null);
+        db=openOrCreateDatabase("Helper1", Context.MODE_PRIVATE, null);
 
         createDatabase();
 
@@ -79,7 +79,7 @@ public class StartingPoint extends AppCompatActivity implements View.OnClickList
         db.execSQL("CREATE TABLE IF NOT EXISTS User(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INT, height DOUBLE, type TEXT , password TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Product(idPro TEXT PRIMARY KEY, name TEXT,  amountofCarbs INT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS FoodMenu(type TEXT,time TEXT, recomendations TEXT)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS UserProducts(idUser INTEGER ,idProducts TEXT ,date INT, FOREIGN KEY(idUser) REFERENCES User(id), FOREIGN KEY(idProducts) REFERENCES Product(id))");
+        db.execSQL("CREATE TABLE IF NOT EXISTS UserProducts(idUser INTEGER ,idProducts TEXT ,date DATETIME, FOREIGN KEY(idUser) REFERENCES User(id), FOREIGN KEY(idProducts) REFERENCES Product(id))");
 
 
         Cursor cursor = db.rawQuery("SELECT * FROM FoodMenu", null);
