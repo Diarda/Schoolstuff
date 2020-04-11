@@ -17,25 +17,23 @@ public class History extends AppCompatActivity {
     SQLiteDatabase db;
     TextView tvPrn,tvDate;
     ListView listView;
-    ArrayAdapter<Object> adapter;
-    ArrayList<List> arrayList;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-        tvDate.findViewById(R.id.tvDate);
-        tvPrn.findViewById(R.id.tvPrn);
-        listView.findViewById(R.id.list);
+        tvDate = findViewById(R.id.tvDate);
+        tvPrn = findViewById(R.id.tvPrn);
+        listView = findViewById(R.id.list);
         db=openOrCreateDatabase("Helper1", Context.MODE_PRIVATE, null);
 
         List<Pair<String,String>> list = new ArrayList<>();
         int ID = StartingPoint.currentUser.getId();
         Cursor c = db.rawQuery("SELECT Product.name, UserProducts.date " +
                 "FROM Product INNER JOIN UserProducts ON Product.idPro = UserProducts.idProducts  " +
-                "WHERE UserProducs.idUser = " + ID + "", null);
+                "WHERE UserProducts.idUser = " + ID + "", null);
         while(c.moveToNext())
         {
-           list.add(new Pair(c.getString(1),c.getString(2)));
+           list.add(new Pair(c.getString(0),c.getString(1)));
         }
 
         listView.setAdapter(new HistoryAdapter(this,R.layout.history_edit,list));
