@@ -9,18 +9,22 @@
     tools:context="com.example.d851.myproject.StartingPoint">
 
     <TextView
+        android:layout_marginTop="5dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Welcome to Helper App"
     android:textSize="30sp"
     android:layout_gravity="center"
     android:textColor="@color/colorMain"
+        android:textStyle="bold"
     />
     <ImageView
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/betterpictureee1"
+        android:layout_height="180dp"
+        android:src="@drawable/idealmealplan"
         android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
         />
     <Button
         android:layout_width="250dp"
